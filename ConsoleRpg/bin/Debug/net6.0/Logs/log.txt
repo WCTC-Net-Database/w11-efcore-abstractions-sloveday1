@@ -1,0 +1,627 @@
+2024-11-03T17:01:30.2884504-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.ServiceProviderCreated]	An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-11-03T17:01:34.0758236-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model]	[Microsoft.EntityFrameworkCore.Model.RedundantIndexRemoved]	The index {'AbilitiesId'} was not created on entity type 'AbilityPlayer (Dictionary<string, object>)' as the properties are already covered by the index {'AbilitiesId', 'PlayersId'}.
+2024-11-03T17:01:34.3277792-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model.Validation]	[Microsoft.EntityFrameworkCore.Model.Validation.ShadowPropertyCreated]	The property 'AbilityPlayer (Dictionary<string, object>).AbilitiesId' was created in shadow state because there are no eligible CLR members with a matching name.
+2024-11-03T17:01:34.3278161-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model.Validation]	[Microsoft.EntityFrameworkCore.Model.Validation.ShadowPropertyCreated]	The property 'AbilityPlayer (Dictionary<string, object>).PlayersId' was created in shadow state because there are no eligible CLR members with a matching name.
+2024-11-03T17:01:34.5906173-06:00	INFO	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.ContextInitialized]	Entity Framework Core 6.0.35 initialized 'GameContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.35' with options: using lazy loading proxies 
+2024-11-03T17:01:34.8292611-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Player>()
+    .OfType<Player>()
+    .FirstOrDefault()'
+2024-11-03T17:01:35.0146059-06:00	WARN	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.FirstWithoutOrderByAndFilterWarning]	The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2024-11-03T17:01:35.0935735-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Player>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Player.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Player.Experience (int) Required, 1], [Property: Player.Health (int) Required, 2], [Property: Player.Name (string) Required, 3] }
+        SELECT TOP(1) p.Id, p.Experience, p.Health, p.Name
+        FROM Players AS p), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Player>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2024-11-03T17:01:35.1270976-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T17:01:35.2045867-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (80ms).
+2024-11-03T17:01:35.2099463-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:36.7417465-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:36.7688039-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Experience], [p].[Health], [p].[Name]
+FROM [Players] AS [p]
+2024-11-03T17:01:36.7970033-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Experience], [p].[Health], [p].[Name]
+FROM [Players] AS [p]
+2024-11-03T17:01:36.8819085-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Player' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T17:01:36.9039663-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T17:01:36.9064298-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:36.9417496-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:36.9424289-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Monster>()
+    .OfType<Goblin>()
+    .FirstOrDefault()'
+2024-11-03T17:01:36.9636787-06:00	WARN	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.FirstWithoutOrderByAndFilterWarning]	The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2024-11-03T17:01:36.9788436-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Goblin>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Monster.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Monster.AggressionLevel (int) Required, 1], [Property: Monster.Health (int) Required, 2], [Property: Monster.MonsterType (string) Required AfterSave:Throw, 3], [Property: Monster.Name (string) Required, 4], [Property: Goblin.Sneakiness (int) Required, 5] }
+        SELECT TOP(1) m.Id, m.AggressionLevel, m.Health, m.MonsterType, m.Name, m.Sneakiness
+        FROM Monsters AS m), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Goblin>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2024-11-03T17:01:36.9791062-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T17:01:36.9791333-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T17:01:36.9791751-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:36.9800890-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:36.9801356-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AggressionLevel], [m].[Health], [m].[MonsterType], [m].[Name], [m].[Sneakiness]
+FROM [Monsters] AS [m]
+2024-11-03T17:01:36.9827057-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AggressionLevel], [m].[Health], [m].[MonsterType], [m].[Name], [m].[Sneakiness]
+FROM [Monsters] AS [m]
+2024-11-03T17:01:36.9858196-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Goblin' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T17:01:36.9897582-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T17:01:36.9897854-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:36.9898007-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:39.1949084-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.NavigationLazyLoading]	The navigation 'PlayerProxy.Abilities' is being lazy-loaded.
+2024-11-03T17:01:39.2347891-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Player>()
+    .AsTracking()
+    .Where(e => EF.Property<int>(e, "Id") == __p_0)
+    .SelectMany(e => e.Abilities)
+    .NotQuiteInclude(e => e.Players
+        .Where(e => EF.Property<int>(e, "Id") == __p_0))'
+2024-11-03T17:01:39.2676405-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.NavigationBaseIncluded]	Including navigation: 'Ability.Players'.
+2024-11-03T17:01:39.4056230-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Ability>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Ability.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Ability.AbilityType (string) Required AfterSave:Throw, 1], [Property: Ability.Description (string) Required, 2], [Property: Ability.Name (string) Required, 3], [Property: ShoveAbility.Damage (int) Required, 4], [Property: ShoveAbility.Distance (int) Required, 5] }
+            1 -> 6
+            2 -> 7
+            3 -> 8
+            4 -> 0
+            5 -> Dictionary<IProperty, int> { [Property: AbilityPlayer (Dictionary<string, object>).AbilitiesId (no field, int) Indexer Required PK FK AfterSave:Throw, 9], [Property: AbilityPlayer (Dictionary<string, object>).PlayersId (no field, int) Indexer Required PK FK Index AfterSave:Throw, 10] }
+            6 -> Dictionary<IProperty, int> { [Property: Player.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 11], [Property: Player.Experience (int) Required, 12], [Property: Player.Health (int) Required, 13], [Property: Player.Name (string) Required, 14] }
+            7 -> 9
+            8 -> 10
+            9 -> 11
+        SELECT t.Id, t.AbilityType, t.Description, t.Name, t.Damage, t.Distance, p.Id, t.AbilitiesId, t.PlayersId, t0.AbilitiesId, t0.PlayersId, t0.Id, t0.Experience, t0.Health, t0.Name
+        FROM Players AS p
+        INNER JOIN 
+        (
+            SELECT a.Id, a.AbilityType, a.Description, a.Name, a.Damage, a.Distance, p0.AbilitiesId, p0.PlayersId
+            FROM PlayerAbilities AS p0
+            INNER JOIN Abilities AS a ON p0.AbilitiesId == a.Id
+        ) AS t ON p.Id == t.PlayersId
+        LEFT JOIN 
+        (
+            SELECT p1.AbilitiesId, p1.PlayersId, p2.Id, p2.Experience, p2.Health, p2.Name
+            FROM PlayerAbilities AS p1
+            INNER JOIN Players AS p2 ON p1.PlayersId == p2.Id
+            WHERE p2.Id == @__p_0
+        ) AS t0 ON t.Id == t0.AbilitiesId
+        WHERE p.Id == @__p_0
+        ORDER BY p.Id ASC, t.AbilitiesId ASC, t.PlayersId ASC, t.Id ASC, t0.AbilitiesId ASC, t0.PlayersId ASC), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Ability>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)'
+2024-11-03T17:01:39.4223978-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T17:01:39.4224417-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T17:01:39.4248332-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:39.4249221-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:39.4311459-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AbilityType], [t].[Description], [t].[Name], [t].[Damage], [t].[Distance], [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t0].[AbilitiesId], [t0].[PlayersId], [t0].[Id], [t0].[Experience], [t0].[Health], [t0].[Name]
+FROM [Players] AS [p]
+INNER JOIN (
+    SELECT [a].[Id], [a].[AbilityType], [a].[Description], [a].[Name], [a].[Damage], [a].[Distance], [p0].[AbilitiesId], [p0].[PlayersId]
+    FROM [PlayerAbilities] AS [p0]
+    INNER JOIN [Abilities] AS [a] ON [p0].[AbilitiesId] = [a].[Id]
+) AS [t] ON [p].[Id] = [t].[PlayersId]
+LEFT JOIN (
+    SELECT [p1].[AbilitiesId], [p1].[PlayersId], [p2].[Id], [p2].[Experience], [p2].[Health], [p2].[Name]
+    FROM [PlayerAbilities] AS [p1]
+    INNER JOIN [Players] AS [p2] ON [p1].[PlayersId] = [p2].[Id]
+    WHERE [p2].[Id] = @__p_0
+) AS [t0] ON [t].[Id] = [t0].[AbilitiesId]
+WHERE [p].[Id] = @__p_0
+ORDER BY [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t].[Id], [t0].[AbilitiesId], [t0].[PlayersId]
+2024-11-03T17:01:39.4824498-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (57ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AbilityType], [t].[Description], [t].[Name], [t].[Damage], [t].[Distance], [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t0].[AbilitiesId], [t0].[PlayersId], [t0].[Id], [t0].[Experience], [t0].[Health], [t0].[Name]
+FROM [Players] AS [p]
+INNER JOIN (
+    SELECT [a].[Id], [a].[AbilityType], [a].[Description], [a].[Name], [a].[Damage], [a].[Distance], [p0].[AbilitiesId], [p0].[PlayersId]
+    FROM [PlayerAbilities] AS [p0]
+    INNER JOIN [Abilities] AS [a] ON [p0].[AbilitiesId] = [a].[Id]
+) AS [t] ON [p].[Id] = [t].[PlayersId]
+LEFT JOIN (
+    SELECT [p1].[AbilitiesId], [p1].[PlayersId], [p2].[Id], [p2].[Experience], [p2].[Health], [p2].[Name]
+    FROM [PlayerAbilities] AS [p1]
+    INNER JOIN [Players] AS [p2] ON [p1].[PlayersId] = [p2].[Id]
+    WHERE [p2].[Id] = @__p_0
+) AS [t0] ON [t].[Id] = [t0].[AbilitiesId]
+WHERE [p].[Id] = @__p_0
+ORDER BY [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t].[Id], [t0].[AbilitiesId], [t0].[PlayersId]
+2024-11-03T17:01:39.4872251-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'ShoveAbility' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T17:01:39.5018242-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'AbilityPlayer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T17:01:39.5076613-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T17:01:39.5076816-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T17:01:39.5076945-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:24.2604688-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.ServiceProviderCreated]	An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-11-03T20:03:26.4353607-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model]	[Microsoft.EntityFrameworkCore.Model.RedundantIndexRemoved]	The index {'AbilitiesId'} was not created on entity type 'AbilityPlayer (Dictionary<string, object>)' as the properties are already covered by the index {'AbilitiesId', 'PlayersId'}.
+2024-11-03T20:03:26.7294084-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model.Validation]	[Microsoft.EntityFrameworkCore.Model.Validation.ShadowPropertyCreated]	The property 'AbilityPlayer (Dictionary<string, object>).AbilitiesId' was created in shadow state because there are no eligible CLR members with a matching name.
+2024-11-03T20:03:26.7294488-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model.Validation]	[Microsoft.EntityFrameworkCore.Model.Validation.ShadowPropertyCreated]	The property 'AbilityPlayer (Dictionary<string, object>).PlayersId' was created in shadow state because there are no eligible CLR members with a matching name.
+2024-11-03T20:03:26.9810774-06:00	INFO	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.ContextInitialized]	Entity Framework Core 6.0.35 initialized 'GameContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.35' with options: using lazy loading proxies 
+2024-11-03T20:03:27.2333818-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Player>()
+    .OfType<Player>()
+    .FirstOrDefault()'
+2024-11-03T20:03:27.4172760-06:00	WARN	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.FirstWithoutOrderByAndFilterWarning]	The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2024-11-03T20:03:27.5046394-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Player>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Player.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Player.EquipmentId (int?) FK Index, 1], [Property: Player.Experience (int) Required, 2], [Property: Player.Health (int) Required, 3], [Property: Player.Name (string) Required, 4] }
+        SELECT TOP(1) p.Id, p.EquipmentId, p.Experience, p.Health, p.Name
+        FROM Players AS p), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Player>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2024-11-03T20:03:27.5425130-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:03:27.6264708-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (87ms).
+2024-11-03T20:03:27.6314824-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:28.2768643-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:28.2845834-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[EquipmentId], [p].[Experience], [p].[Health], [p].[Name]
+FROM [Players] AS [p]
+2024-11-03T20:03:28.3141750-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[EquipmentId], [p].[Experience], [p].[Health], [p].[Name]
+FROM [Players] AS [p]
+2024-11-03T20:03:28.3627491-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Player' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:03:28.3907657-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:03:28.3943829-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:28.4024502-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:28.4031869-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Monster>()
+    .OfType<Goblin>()
+    .FirstOrDefault()'
+2024-11-03T20:03:28.4138372-06:00	WARN	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.FirstWithoutOrderByAndFilterWarning]	The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2024-11-03T20:03:28.4172566-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Goblin>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Monster.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Monster.AggressionLevel (int) Required, 1], [Property: Monster.Health (int) Required, 2], [Property: Monster.MonsterType (string) Required AfterSave:Throw, 3], [Property: Monster.Name (string) Required, 4], [Property: Goblin.Sneakiness (int) Required, 5] }
+        SELECT TOP(1) m.Id, m.AggressionLevel, m.Health, m.MonsterType, m.Name, m.Sneakiness
+        FROM Monsters AS m), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Goblin>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2024-11-03T20:03:28.4175374-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:03:28.4175609-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T20:03:28.4175777-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:28.4187376-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:28.4187902-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AggressionLevel], [m].[Health], [m].[MonsterType], [m].[Name], [m].[Sneakiness]
+FROM [Monsters] AS [m]
+2024-11-03T20:03:28.4212672-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AggressionLevel], [m].[Health], [m].[MonsterType], [m].[Name], [m].[Sneakiness]
+FROM [Monsters] AS [m]
+2024-11-03T20:03:28.4238843-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Goblin' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:03:28.4282184-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:03:28.4283426-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:28.4284043-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.7731576-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.NavigationLazyLoading]	The navigation 'PlayerProxy.Equipment' is being lazy-loaded.
+2024-11-03T20:03:31.7928871-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Equipment>()
+    .Where(e => EF.Property<int>(e, "Id") == __p_0)
+    .AsTracking()'
+2024-11-03T20:03:31.8261838-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Equipment>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Equipment.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Equipment.ArmorId (int?) FK Index, 1], [Property: Equipment.WeaponId (int?) FK Index, 2] }
+        SELECT e.Id, e.ArmorId, e.WeaponId
+        FROM Equipments AS e
+        WHERE e.Id == @__p_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Equipment>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)'
+2024-11-03T20:03:31.8510861-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:03:31.8511161-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T20:03:31.8738032-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.8740095-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.8801960-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[Id], [e].[ArmorId], [e].[WeaponId]
+FROM [Equipments] AS [e]
+WHERE [e].[Id] = @__p_0
+2024-11-03T20:03:31.9064854-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (32ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[Id], [e].[ArmorId], [e].[WeaponId]
+FROM [Equipments] AS [e]
+WHERE [e].[Id] = @__p_0
+2024-11-03T20:03:31.9086375-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Equipment' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:03:31.9221380-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:03:31.9222153-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.9222503-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.9239883-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.NavigationLazyLoading]	The navigation 'EquipmentProxy.Weapon' is being lazy-loaded.
+2024-11-03T20:03:31.9245643-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Item>()
+    .Where(e => EF.Property<int>(e, "Id") == __p_0)
+    .AsTracking()'
+2024-11-03T20:03:31.9263426-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Item>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Item.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Item.Attack (int) Required, 1], [Property: Item.Defense (int) Required, 2], [Property: Item.Name (string) Required, 3], [Property: Item.Type (string) Required, 4] }
+        SELECT i.Id, i.Attack, i.Defense, i.Name, i.Type
+        FROM Items AS i
+        WHERE i.Id == @__p_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Item>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)'
+2024-11-03T20:03:31.9265346-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:03:31.9265478-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T20:03:31.9265593-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.9266517-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.9266856-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[Attack], [i].[Defense], [i].[Name], [i].[Type]
+FROM [Items] AS [i]
+WHERE [i].[Id] = @__p_0
+2024-11-03T20:03:31.9274939-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[Attack], [i].[Defense], [i].[Name], [i].[Type]
+FROM [Items] AS [i]
+WHERE [i].[Id] = @__p_0
+2024-11-03T20:03:31.9290793-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Item' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:03:31.9340329-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:03:31.9340925-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.9341251-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:31.9377059-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.NavigationLazyLoading]	The navigation 'PlayerProxy.Abilities' is being lazy-loaded.
+2024-11-03T20:03:31.9509071-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Player>()
+    .AsTracking()
+    .Where(e => EF.Property<int>(e, "Id") == __p_0)
+    .SelectMany(e => e.Abilities)
+    .NotQuiteInclude(e => e.Players
+        .Where(e => EF.Property<int>(e, "Id") == __p_0))'
+2024-11-03T20:03:31.9751232-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.NavigationBaseIncluded]	Including navigation: 'Ability.Players'.
+2024-11-03T20:03:32.0784065-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Ability>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Ability.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Ability.AbilityType (string) Required AfterSave:Throw, 1], [Property: Ability.Description (string) Required, 2], [Property: Ability.Name (string) Required, 3], [Property: ShoveAbility.Damage (int) Required, 4], [Property: ShoveAbility.Distance (int) Required, 5] }
+            1 -> 6
+            2 -> 7
+            3 -> 8
+            4 -> 0
+            5 -> Dictionary<IProperty, int> { [Property: AbilityPlayer (Dictionary<string, object>).AbilitiesId (no field, int) Indexer Required PK FK AfterSave:Throw, 9], [Property: AbilityPlayer (Dictionary<string, object>).PlayersId (no field, int) Indexer Required PK FK Index AfterSave:Throw, 10] }
+            6 -> Dictionary<IProperty, int> { [Property: Player.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 11], [Property: Player.EquipmentId (int?) FK Index, 12], [Property: Player.Experience (int) Required, 13], [Property: Player.Health (int) Required, 14], [Property: Player.Name (string) Required, 15] }
+            7 -> 9
+            8 -> 10
+            9 -> 11
+        SELECT t.Id, t.AbilityType, t.Description, t.Name, t.Damage, t.Distance, p.Id, t.AbilitiesId, t.PlayersId, t0.AbilitiesId, t0.PlayersId, t0.Id, t0.EquipmentId, t0.Experience, t0.Health, t0.Name
+        FROM Players AS p
+        INNER JOIN 
+        (
+            SELECT a.Id, a.AbilityType, a.Description, a.Name, a.Damage, a.Distance, p0.AbilitiesId, p0.PlayersId
+            FROM PlayerAbilities AS p0
+            INNER JOIN Abilities AS a ON p0.AbilitiesId == a.Id
+        ) AS t ON p.Id == t.PlayersId
+        LEFT JOIN 
+        (
+            SELECT p1.AbilitiesId, p1.PlayersId, p2.Id, p2.EquipmentId, p2.Experience, p2.Health, p2.Name
+            FROM PlayerAbilities AS p1
+            INNER JOIN Players AS p2 ON p1.PlayersId == p2.Id
+            WHERE p2.Id == @__p_0
+        ) AS t0 ON t.Id == t0.AbilitiesId
+        WHERE p.Id == @__p_0
+        ORDER BY p.Id ASC, t.AbilitiesId ASC, t.PlayersId ASC, t.Id ASC, t0.AbilitiesId ASC, t0.PlayersId ASC), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Ability>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)'
+2024-11-03T20:03:32.0808703-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:03:32.0808967-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T20:03:32.0809134-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:32.0810599-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:32.0811098-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AbilityType], [t].[Description], [t].[Name], [t].[Damage], [t].[Distance], [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t0].[AbilitiesId], [t0].[PlayersId], [t0].[Id], [t0].[EquipmentId], [t0].[Experience], [t0].[Health], [t0].[Name]
+FROM [Players] AS [p]
+INNER JOIN (
+    SELECT [a].[Id], [a].[AbilityType], [a].[Description], [a].[Name], [a].[Damage], [a].[Distance], [p0].[AbilitiesId], [p0].[PlayersId]
+    FROM [PlayerAbilities] AS [p0]
+    INNER JOIN [Abilities] AS [a] ON [p0].[AbilitiesId] = [a].[Id]
+) AS [t] ON [p].[Id] = [t].[PlayersId]
+LEFT JOIN (
+    SELECT [p1].[AbilitiesId], [p1].[PlayersId], [p2].[Id], [p2].[EquipmentId], [p2].[Experience], [p2].[Health], [p2].[Name]
+    FROM [PlayerAbilities] AS [p1]
+    INNER JOIN [Players] AS [p2] ON [p1].[PlayersId] = [p2].[Id]
+    WHERE [p2].[Id] = @__p_0
+) AS [t0] ON [t].[Id] = [t0].[AbilitiesId]
+WHERE [p].[Id] = @__p_0
+ORDER BY [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t].[Id], [t0].[AbilitiesId], [t0].[PlayersId]
+2024-11-03T20:03:32.0866727-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AbilityType], [t].[Description], [t].[Name], [t].[Damage], [t].[Distance], [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t0].[AbilitiesId], [t0].[PlayersId], [t0].[Id], [t0].[EquipmentId], [t0].[Experience], [t0].[Health], [t0].[Name]
+FROM [Players] AS [p]
+INNER JOIN (
+    SELECT [a].[Id], [a].[AbilityType], [a].[Description], [a].[Name], [a].[Damage], [a].[Distance], [p0].[AbilitiesId], [p0].[PlayersId]
+    FROM [PlayerAbilities] AS [p0]
+    INNER JOIN [Abilities] AS [a] ON [p0].[AbilitiesId] = [a].[Id]
+) AS [t] ON [p].[Id] = [t].[PlayersId]
+LEFT JOIN (
+    SELECT [p1].[AbilitiesId], [p1].[PlayersId], [p2].[Id], [p2].[EquipmentId], [p2].[Experience], [p2].[Health], [p2].[Name]
+    FROM [PlayerAbilities] AS [p1]
+    INNER JOIN [Players] AS [p2] ON [p1].[PlayersId] = [p2].[Id]
+    WHERE [p2].[Id] = @__p_0
+) AS [t0] ON [t].[Id] = [t0].[AbilitiesId]
+WHERE [p].[Id] = @__p_0
+ORDER BY [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t].[Id], [t0].[AbilitiesId], [t0].[PlayersId]
+2024-11-03T20:03:32.0923238-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'ShoveAbility' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:03:32.1090908-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'AbilityPlayer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:03:32.1130531-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:03:32.1131326-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:03:32.1131650-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:22.3354960-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.ServiceProviderCreated]	An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-11-03T20:04:24.5396460-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model]	[Microsoft.EntityFrameworkCore.Model.RedundantIndexRemoved]	The index {'AbilitiesId'} was not created on entity type 'AbilityPlayer (Dictionary<string, object>)' as the properties are already covered by the index {'AbilitiesId', 'PlayersId'}.
+2024-11-03T20:04:24.8042130-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model.Validation]	[Microsoft.EntityFrameworkCore.Model.Validation.ShadowPropertyCreated]	The property 'AbilityPlayer (Dictionary<string, object>).AbilitiesId' was created in shadow state because there are no eligible CLR members with a matching name.
+2024-11-03T20:04:24.8042588-06:00	DBUG	[Microsoft.EntityFrameworkCore.Model.Validation]	[Microsoft.EntityFrameworkCore.Model.Validation.ShadowPropertyCreated]	The property 'AbilityPlayer (Dictionary<string, object>).PlayersId' was created in shadow state because there are no eligible CLR members with a matching name.
+2024-11-03T20:04:24.9663843-06:00	INFO	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.ContextInitialized]	Entity Framework Core 6.0.35 initialized 'GameContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.35' with options: using lazy loading proxies 
+2024-11-03T20:04:25.0269415-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Player>()
+    .OfType<Player>()
+    .FirstOrDefault()'
+2024-11-03T20:04:25.1638151-06:00	WARN	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.FirstWithoutOrderByAndFilterWarning]	The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2024-11-03T20:04:25.2520247-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Player>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Player.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Player.EquipmentId (int?) FK Index, 1], [Property: Player.Experience (int) Required, 2], [Property: Player.Health (int) Required, 3], [Property: Player.Name (string) Required, 4] }
+        SELECT TOP(1) p.Id, p.EquipmentId, p.Experience, p.Health, p.Name
+        FROM Players AS p), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Player>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2024-11-03T20:04:25.2864525-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:04:25.3386089-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (52ms).
+2024-11-03T20:04:25.3431064-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:25.5749567-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:25.5828642-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[EquipmentId], [p].[Experience], [p].[Health], [p].[Name]
+FROM [Players] AS [p]
+2024-11-03T20:04:25.6118653-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[EquipmentId], [p].[Experience], [p].[Health], [p].[Name]
+FROM [Players] AS [p]
+2024-11-03T20:04:25.6521083-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Player' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:04:25.6793965-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:04:25.6827995-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:25.6896705-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:25.6903083-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Monster>()
+    .OfType<Goblin>()
+    .FirstOrDefault()'
+2024-11-03T20:04:25.7009892-06:00	WARN	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.FirstWithoutOrderByAndFilterWarning]	The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2024-11-03T20:04:25.7039543-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Goblin>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Monster.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Monster.AggressionLevel (int) Required, 1], [Property: Monster.Health (int) Required, 2], [Property: Monster.MonsterType (string) Required AfterSave:Throw, 3], [Property: Monster.Name (string) Required, 4], [Property: Goblin.Sneakiness (int) Required, 5] }
+        SELECT TOP(1) m.Id, m.AggressionLevel, m.Health, m.MonsterType, m.Name, m.Sneakiness
+        FROM Monsters AS m), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Goblin>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2024-11-03T20:04:25.7042286-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:04:25.7042510-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T20:04:25.7042647-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:25.7053679-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:25.7054165-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AggressionLevel], [m].[Health], [m].[MonsterType], [m].[Name], [m].[Sneakiness]
+FROM [Monsters] AS [m]
+2024-11-03T20:04:25.7073672-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AggressionLevel], [m].[Health], [m].[MonsterType], [m].[Name], [m].[Sneakiness]
+FROM [Monsters] AS [m]
+2024-11-03T20:04:25.7107352-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Goblin' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:04:25.7153663-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:04:25.7154261-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:25.7154635-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.0388375-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.NavigationLazyLoading]	The navigation 'PlayerProxy.Equipment' is being lazy-loaded.
+2024-11-03T20:04:27.0545791-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Equipment>()
+    .Where(e => EF.Property<int>(e, "Id") == __p_0)
+    .AsTracking()'
+2024-11-03T20:04:27.0898403-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Equipment>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Equipment.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Equipment.ArmorId (int?) FK Index, 1], [Property: Equipment.WeaponId (int?) FK Index, 2] }
+        SELECT e.Id, e.ArmorId, e.WeaponId
+        FROM Equipments AS e
+        WHERE e.Id == @__p_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Equipment>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)'
+2024-11-03T20:04:27.0973639-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:04:27.0973926-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T20:04:27.1002885-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.1004326-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.1055117-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[Id], [e].[ArmorId], [e].[WeaponId]
+FROM [Equipments] AS [e]
+WHERE [e].[Id] = @__p_0
+2024-11-03T20:04:27.1298781-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (29ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[Id], [e].[ArmorId], [e].[WeaponId]
+FROM [Equipments] AS [e]
+WHERE [e].[Id] = @__p_0
+2024-11-03T20:04:27.1323373-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Equipment' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:04:27.1456911-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:04:27.1457541-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.1457881-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.1477247-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.NavigationLazyLoading]	The navigation 'EquipmentProxy.Weapon' is being lazy-loaded.
+2024-11-03T20:04:27.1485790-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Item>()
+    .Where(e => EF.Property<int>(e, "Id") == __p_0)
+    .AsTracking()'
+2024-11-03T20:04:27.1507091-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Item>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Item.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Item.Attack (int) Required, 1], [Property: Item.Defense (int) Required, 2], [Property: Item.Name (string) Required, 3], [Property: Item.Type (string) Required, 4] }
+        SELECT i.Id, i.Attack, i.Defense, i.Name, i.Type
+        FROM Items AS i
+        WHERE i.Id == @__p_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Item>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)'
+2024-11-03T20:04:27.1509132-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:04:27.1509284-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T20:04:27.1509406-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.1510423-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.1510767-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[Attack], [i].[Defense], [i].[Name], [i].[Type]
+FROM [Items] AS [i]
+WHERE [i].[Id] = @__p_0
+2024-11-03T20:04:27.1515704-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[Id], [i].[Attack], [i].[Defense], [i].[Name], [i].[Type]
+FROM [Items] AS [i]
+WHERE [i].[Id] = @__p_0
+2024-11-03T20:04:27.1530176-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'Item' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:04:27.1575352-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:04:27.1575736-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.1575983-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.1612287-06:00	DBUG	[Microsoft.EntityFrameworkCore.Infrastructure]	[Microsoft.EntityFrameworkCore.Infrastructure.NavigationLazyLoading]	The navigation 'PlayerProxy.Abilities' is being lazy-loaded.
+2024-11-03T20:04:27.1738671-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryCompilationStarting]	Compiling query expression: 
+'DbSet<Player>()
+    .AsTracking()
+    .Where(e => EF.Property<int>(e, "Id") == __p_0)
+    .SelectMany(e => e.Abilities)
+    .NotQuiteInclude(e => e.Players
+        .Where(e => EF.Property<int>(e, "Id") == __p_0))'
+2024-11-03T20:04:27.1993302-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.NavigationBaseIncluded]	Including navigation: 'Ability.Players'.
+2024-11-03T20:04:27.2972034-06:00	DBUG	[Microsoft.EntityFrameworkCore.Query]	[Microsoft.EntityFrameworkCore.Query.QueryExecutionPlanned]	Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Ability>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Ability.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Ability.AbilityType (string) Required AfterSave:Throw, 1], [Property: Ability.Description (string) Required, 2], [Property: Ability.Name (string) Required, 3], [Property: ShoveAbility.Damage (int) Required, 4], [Property: ShoveAbility.Distance (int) Required, 5] }
+            1 -> 6
+            2 -> 7
+            3 -> 8
+            4 -> 0
+            5 -> Dictionary<IProperty, int> { [Property: AbilityPlayer (Dictionary<string, object>).AbilitiesId (no field, int) Indexer Required PK FK AfterSave:Throw, 9], [Property: AbilityPlayer (Dictionary<string, object>).PlayersId (no field, int) Indexer Required PK FK Index AfterSave:Throw, 10] }
+            6 -> Dictionary<IProperty, int> { [Property: Player.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 11], [Property: Player.EquipmentId (int?) FK Index, 12], [Property: Player.Experience (int) Required, 13], [Property: Player.Health (int) Required, 14], [Property: Player.Name (string) Required, 15] }
+            7 -> 9
+            8 -> 10
+            9 -> 11
+        SELECT t.Id, t.AbilityType, t.Description, t.Name, t.Damage, t.Distance, p.Id, t.AbilitiesId, t.PlayersId, t0.AbilitiesId, t0.PlayersId, t0.Id, t0.EquipmentId, t0.Experience, t0.Health, t0.Name
+        FROM Players AS p
+        INNER JOIN 
+        (
+            SELECT a.Id, a.AbilityType, a.Description, a.Name, a.Damage, a.Distance, p0.AbilitiesId, p0.PlayersId
+            FROM PlayerAbilities AS p0
+            INNER JOIN Abilities AS a ON p0.AbilitiesId == a.Id
+        ) AS t ON p.Id == t.PlayersId
+        LEFT JOIN 
+        (
+            SELECT p1.AbilitiesId, p1.PlayersId, p2.Id, p2.EquipmentId, p2.Experience, p2.Health, p2.Name
+            FROM PlayerAbilities AS p1
+            INNER JOIN Players AS p2 ON p1.PlayersId == p2.Id
+            WHERE p2.Id == @__p_0
+        ) AS t0 ON t.Id == t0.AbilitiesId
+        WHERE p.Id == @__p_0
+        ORDER BY p.Id ASC, t.AbilitiesId ASC, t.PlayersId ASC, t.Id ASC, t0.AbilitiesId ASC, t0.PlayersId ASC), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Ability>, 
+    ConsoleRpgEntities.Data.GameContext, 
+    False, 
+    False, 
+    True
+)'
+2024-11-03T20:04:27.2995975-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreating]	Creating DbCommand for 'ExecuteReader'.
+2024-11-03T20:04:27.2996189-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandCreated]	Created DbCommand for 'ExecuteReader' (0ms).
+2024-11-03T20:04:27.2996305-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpening]	Opening connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.2997518-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionOpened]	Opened connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.2997943-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuting]	Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AbilityType], [t].[Description], [t].[Name], [t].[Damage], [t].[Distance], [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t0].[AbilitiesId], [t0].[PlayersId], [t0].[Id], [t0].[EquipmentId], [t0].[Experience], [t0].[Health], [t0].[Name]
+FROM [Players] AS [p]
+INNER JOIN (
+    SELECT [a].[Id], [a].[AbilityType], [a].[Description], [a].[Name], [a].[Damage], [a].[Distance], [p0].[AbilitiesId], [p0].[PlayersId]
+    FROM [PlayerAbilities] AS [p0]
+    INNER JOIN [Abilities] AS [a] ON [p0].[AbilitiesId] = [a].[Id]
+) AS [t] ON [p].[Id] = [t].[PlayersId]
+LEFT JOIN (
+    SELECT [p1].[AbilitiesId], [p1].[PlayersId], [p2].[Id], [p2].[EquipmentId], [p2].[Experience], [p2].[Health], [p2].[Name]
+    FROM [PlayerAbilities] AS [p1]
+    INNER JOIN [Players] AS [p2] ON [p1].[PlayersId] = [p2].[Id]
+    WHERE [p2].[Id] = @__p_0
+) AS [t0] ON [t].[Id] = [t0].[AbilitiesId]
+WHERE [p].[Id] = @__p_0
+ORDER BY [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t].[Id], [t0].[AbilitiesId], [t0].[PlayersId]
+2024-11-03T20:04:27.3003587-06:00	INFO	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted]	Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[AbilityType], [t].[Description], [t].[Name], [t].[Damage], [t].[Distance], [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t0].[AbilitiesId], [t0].[PlayersId], [t0].[Id], [t0].[EquipmentId], [t0].[Experience], [t0].[Health], [t0].[Name]
+FROM [Players] AS [p]
+INNER JOIN (
+    SELECT [a].[Id], [a].[AbilityType], [a].[Description], [a].[Name], [a].[Damage], [a].[Distance], [p0].[AbilitiesId], [p0].[PlayersId]
+    FROM [PlayerAbilities] AS [p0]
+    INNER JOIN [Abilities] AS [a] ON [p0].[AbilitiesId] = [a].[Id]
+) AS [t] ON [p].[Id] = [t].[PlayersId]
+LEFT JOIN (
+    SELECT [p1].[AbilitiesId], [p1].[PlayersId], [p2].[Id], [p2].[EquipmentId], [p2].[Experience], [p2].[Health], [p2].[Name]
+    FROM [PlayerAbilities] AS [p1]
+    INNER JOIN [Players] AS [p2] ON [p1].[PlayersId] = [p2].[Id]
+    WHERE [p2].[Id] = @__p_0
+) AS [t0] ON [t].[Id] = [t0].[AbilitiesId]
+WHERE [p].[Id] = @__p_0
+ORDER BY [p].[Id], [t].[AbilitiesId], [t].[PlayersId], [t].[Id], [t0].[AbilitiesId], [t0].[PlayersId]
+2024-11-03T20:04:27.3048796-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'ShoveAbility' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:04:27.3207039-06:00	DBUG	[Microsoft.EntityFrameworkCore.ChangeTracking]	[Microsoft.EntityFrameworkCore.ChangeTracking.StartedTracking]	Context 'GameContext' started tracking 'AbilityPlayer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-11-03T20:04:27.3249223-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Command]	[Microsoft.EntityFrameworkCore.Database.Command.DataReaderDisposing]	A data reader was disposed.
+2024-11-03T20:04:27.3250324-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosing]	Closing connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
+2024-11-03T20:04:27.3250929-06:00	DBUG	[Microsoft.EntityFrameworkCore.Database.Connection]	[Microsoft.EntityFrameworkCore.Database.Connection.ConnectionClosed]	Closed connection to database 'GameDatabase' on server '(localdb)\mssqllocaldb'.
