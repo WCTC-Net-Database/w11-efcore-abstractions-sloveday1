@@ -7683,40 +7683,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mcart\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\jklov\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\WCTC\\NetDb-F2024\\net-db-assignment-templates-fall2024\\W11-assignment-template\\ConsoleRpg\\ConsoleRpg.csproj",
+      "projectUniqueName": "E:\\DotNet Database\\w11-efcore-abstractions-sloveday1\\ConsoleRpg\\ConsoleRpg.csproj",
       "projectName": "ConsoleRpg",
-      "projectPath": "D:\\Documents\\WCTC\\NetDb-F2024\\net-db-assignment-templates-fall2024\\W11-assignment-template\\ConsoleRpg\\ConsoleRpg.csproj",
-      "packagesPath": "C:\\Users\\mcart\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\WCTC\\NetDb-F2024\\net-db-assignment-templates-fall2024\\W11-assignment-template\\ConsoleRpg\\obj\\",
+      "projectPath": "E:\\DotNet Database\\w11-efcore-abstractions-sloveday1\\ConsoleRpg\\ConsoleRpg.csproj",
+      "packagesPath": "C:\\Users\\jklov\\.nuget\\packages\\",
+      "outputPath": "E:\\DotNet Database\\w11-efcore-abstractions-sloveday1\\ConsoleRpg\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mcart\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jklov\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Documents\\WCTC\\NetDb-F2024\\net-db-assignment-templates-fall2024\\W11-assignment-template\\ConsoleRpgEntities\\ConsoleRpgEntities.csproj": {
-              "projectPath": "D:\\Documents\\WCTC\\NetDb-F2024\\net-db-assignment-templates-fall2024\\W11-assignment-template\\ConsoleRpgEntities\\ConsoleRpgEntities.csproj"
+            "E:\\DotNet Database\\w11-efcore-abstractions-sloveday1\\ConsoleRpgEntities\\ConsoleRpgEntities.csproj": {
+              "projectPath": "E:\\DotNet Database\\w11-efcore-abstractions-sloveday1\\ConsoleRpgEntities\\ConsoleRpgEntities.csproj"
             }
           }
         }
@@ -7775,7 +7767,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ConsoleRpgEntities
-build_property.ProjectDir = D:\Documents\WCTC\NetDb-F2024\net-db-assignment-templates-fall2024\W11-assignment-template\ConsoleRpgEntities\
+build_property.ProjectDir = E:\DotNet Database\w11-efcore-abstractions-sloveday1\ConsoleRpgEntities\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

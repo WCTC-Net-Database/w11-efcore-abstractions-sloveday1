@@ -65,7 +65,7 @@ public class GameEngine
     {
         if (_goblin is ITargetable targetableGoblin)
         {
-            _player.Attack(targetableGoblin);
+            _player.Attack(targetableGoblin, _player.Equipment);
             _player.UseAbility(_player.Abilities.First(), targetableGoblin);
         }
     }
